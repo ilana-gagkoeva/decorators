@@ -13,3 +13,13 @@ class Gun(ABC):
     def shoot(self):
         class_name = self.title
         print('Shoot from {}'.format(class_name))
+
+class Pistol(Gun):
+    """Пистолет"""
+    
+    @property
+    def title(self):
+        return 'Pistol'
+        
+    def shoot(self):
+        super().shoot()
