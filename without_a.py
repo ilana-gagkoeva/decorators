@@ -3,13 +3,13 @@ from time import time, sleep
 def measure_time(func):
     """ Декоратор вычисления времени работы функции """
 
-    def decorator(*args, **kwargs):
+    def wrapper(*args, **kwargs):
         t1 = time()
-        func()
+        result = func(*args, **kwargs)
         t2 = time()
         delta = t2 - t1
         return delta # возвращаем время работы функции
-    return decorator
+    return wrapper
 
 
 def f1():
